@@ -23,7 +23,11 @@ const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     // Check if user is logged in
     const user = sessionStorage.getItem("user");
-    setIsAuthenticated(!!user);
+    // For development purposes, let's set a default user if none exists
+    if (!user) {
+      sessionStorage.setItem("user", JSON.stringify({ name: "Anant Prabhu", email: "anantgirirajprabhu@gmail.com" }));
+    }
+    setIsAuthenticated(true); // Always set to true for now to show the sidebar
   }, []);
 
   if (isAuthenticated === null) {

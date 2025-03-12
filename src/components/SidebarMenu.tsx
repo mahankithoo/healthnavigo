@@ -20,14 +20,17 @@ interface SidebarMenuProps {
 }
 
 const SidebarMenu: React.FC<SidebarMenuProps> = ({ onLogout }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true); // Set to true by default on desktop
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
 
   const closeSidebar = () => {
-    setIsOpen(false);
+    // Only close on mobile
+    if (window.innerWidth < 768) {
+      setIsOpen(false);
+    }
   };
 
   const sidebarVariants = {
@@ -80,7 +83,7 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({ onLogout }) => {
         initial="closed"
         animate={isOpen ? "open" : "closed"}
         className={cn(
-          "fixed top-0 left-0 z-40 h-full w-64 bg-white shadow-lg md:translate-x-0 md:shadow-none md:static",
+          "fixed top-0 left-0 z-40 h-full w-64 bg-white shadow-lg md:relative md:shadow-none",
           isOpen ? "block" : "hidden md:block"
         )}
       >
