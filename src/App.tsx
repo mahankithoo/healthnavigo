@@ -57,10 +57,10 @@ const App = () => (
             }
           >
             <Route index element={<HomePage />} />
-            <Route path="/appointment" element={<AppointmentPage />} />
-            <Route path="/health-tracker" element={<HealthTrackerPage />} />
-            <Route path="/medication" element={<MedicationPage />} />
-            <Route path="/health-tips" element={<HealthTipsPage />} />
+            <Route path="appointment" element={<AppointmentPage />} />
+            <Route path="health-tracker" element={<HealthTrackerPage />} />
+            <Route path="medication" element={<MedicationPage />} />
+            <Route path="health-tips" element={<HealthTipsPage />} />
           </Route>
           
           <Route path="*" element={<NotFound />} />

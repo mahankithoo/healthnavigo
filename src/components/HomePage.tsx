@@ -5,13 +5,13 @@ import { motion } from "framer-motion";
 
 const HomePage: React.FC = () => {
   return (
-    <div className="page-transition">
+    <div className="page-container">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="flex flex-col items-center text-center mb-10">
+        <div className="flex flex-col items-center text-center mb-8">
           <div className="inline-flex items-center justify-center p-2 bg-medical-secondary rounded-lg text-medical-primary mb-4">
             <span className="text-xs font-medium uppercase tracking-wider">Symptom Checker</span>
           </div>
@@ -19,11 +19,10 @@ const HomePage: React.FC = () => {
             How are you feeling today?
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl">
-            Describe your symptoms below and we'll help identify possible conditions
-            and suggest appropriate remedies.
+            Describe your symptoms below and our AI-powered system will provide you with possible conditions and remedies.
           </p>
         </div>
-        
+
         <SymptomChecker />
       </motion.div>
     </div>
