@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import { Line } from "recharts";
-import { Chart } from "@/components/ui/chart";
+import { ChartContainer } from "@/components/ui/chart";
 import { healthRecords, HealthRecord } from "@/utils/data";
 import { CustomButton } from "./ui/CustomButton";
 import { FileText, Heart, Droplet, Activity, Plus } from "lucide-react";
@@ -98,7 +98,7 @@ const HealthTrackerPage: React.FC = () => {
             <div className="space-y-4">
               <h3 className="text-lg font-medium text-gray-900">Blood Pressure (mmHg)</h3>
               <div className="h-64">
-                <Chart data={bpData} className="h-full">
+                <ChartContainer data={bpData} className="h-full">
                   <Line
                     type="monotone"
                     dataKey="systolic"
@@ -115,7 +115,7 @@ const HealthTrackerPage: React.FC = () => {
                     dot={{ r: 4 }}
                     name="Diastolic"
                   />
-                </Chart>
+                </ChartContainer>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
                 <div className="bg-medical-secondary rounded-lg p-4">
@@ -139,7 +139,7 @@ const HealthTrackerPage: React.FC = () => {
             <div className="space-y-4">
               <h3 className="text-lg font-medium text-gray-900">Blood Sugar (mg/dL)</h3>
               <div className="h-64">
-                <Chart data={sugarData} className="h-full">
+                <ChartContainer data={sugarData} className="h-full">
                   <Line
                     type="monotone"
                     dataKey="value"
@@ -147,7 +147,7 @@ const HealthTrackerPage: React.FC = () => {
                     strokeWidth={2}
                     dot={{ r: 4 }}
                   />
-                </Chart>
+                </ChartContainer>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
                 <div className="bg-medical-secondary rounded-lg p-4">
@@ -170,7 +170,7 @@ const HealthTrackerPage: React.FC = () => {
             <div className="space-y-4">
               <h3 className="text-lg font-medium text-gray-900">Heart Rate (BPM)</h3>
               <div className="h-64">
-                <Chart data={heartData} className="h-full">
+                <ChartContainer data={heartData} className="h-full">
                   <Line
                     type="monotone"
                     dataKey="value"
@@ -178,7 +178,7 @@ const HealthTrackerPage: React.FC = () => {
                     strokeWidth={2}
                     dot={{ r: 4 }}
                   />
-                </Chart>
+                </ChartContainer>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
                 <div className="bg-medical-secondary rounded-lg p-4">
@@ -201,7 +201,7 @@ const HealthTrackerPage: React.FC = () => {
             <div className="space-y-4">
               <h3 className="text-lg font-medium text-gray-900">Weight (kg)</h3>
               <div className="h-64">
-                <Chart data={weightData} className="h-full">
+                <ChartContainer data={weightData} className="h-full">
                   <Line
                     type="monotone"
                     dataKey="value"
@@ -209,7 +209,7 @@ const HealthTrackerPage: React.FC = () => {
                     strokeWidth={2}
                     dot={{ r: 4 }}
                   />
-                </Chart>
+                </ChartContainer>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
                 <div className="bg-medical-secondary rounded-lg p-4">
