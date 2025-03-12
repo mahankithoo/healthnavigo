@@ -1,7 +1,6 @@
 
 import React, { useState } from "react";
-import { Line } from "recharts";
-import { ChartContainer } from "@/components/ui/chart";
+import { Line, ResponsiveContainer, LineChart, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
 import { healthRecords, HealthRecord } from "@/utils/data";
 import { CustomButton } from "./ui/CustomButton";
 import { FileText, Heart, Droplet, Activity, Plus } from "lucide-react";
@@ -98,24 +97,34 @@ const HealthTrackerPage: React.FC = () => {
             <div className="space-y-4">
               <h3 className="text-lg font-medium text-gray-900">Blood Pressure (mmHg)</h3>
               <div className="h-64">
-                <ChartContainer data={bpData} className="h-full">
-                  <Line
-                    type="monotone"
-                    dataKey="systolic"
-                    stroke="#0EA5E9"
-                    strokeWidth={2}
-                    dot={{ r: 4 }}
-                    name="Systolic"
-                  />
-                  <Line
-                    type="monotone"
-                    dataKey="diastolic"
-                    stroke="#7DD3FC"
-                    strokeWidth={2}
-                    dot={{ r: 4 }}
-                    name="Diastolic"
-                  />
-                </ChartContainer>
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart
+                    data={bpData}
+                    margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="date" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                    <Line
+                      type="monotone"
+                      dataKey="systolic"
+                      stroke="#0EA5E9"
+                      strokeWidth={2}
+                      dot={{ r: 4 }}
+                      name="Systolic"
+                    />
+                    <Line
+                      type="monotone"
+                      dataKey="diastolic"
+                      stroke="#7DD3FC"
+                      strokeWidth={2}
+                      dot={{ r: 4 }}
+                      name="Diastolic"
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
                 <div className="bg-medical-secondary rounded-lg p-4">
@@ -139,15 +148,26 @@ const HealthTrackerPage: React.FC = () => {
             <div className="space-y-4">
               <h3 className="text-lg font-medium text-gray-900">Blood Sugar (mg/dL)</h3>
               <div className="h-64">
-                <ChartContainer data={sugarData} className="h-full">
-                  <Line
-                    type="monotone"
-                    dataKey="value"
-                    stroke="#0EA5E9"
-                    strokeWidth={2}
-                    dot={{ r: 4 }}
-                  />
-                </ChartContainer>
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart
+                    data={sugarData}
+                    margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="date" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                    <Line
+                      type="monotone"
+                      dataKey="value"
+                      stroke="#0EA5E9"
+                      strokeWidth={2}
+                      dot={{ r: 4 }}
+                      name="Blood Sugar"
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
                 <div className="bg-medical-secondary rounded-lg p-4">
@@ -170,15 +190,26 @@ const HealthTrackerPage: React.FC = () => {
             <div className="space-y-4">
               <h3 className="text-lg font-medium text-gray-900">Heart Rate (BPM)</h3>
               <div className="h-64">
-                <ChartContainer data={heartData} className="h-full">
-                  <Line
-                    type="monotone"
-                    dataKey="value"
-                    stroke="#0EA5E9"
-                    strokeWidth={2}
-                    dot={{ r: 4 }}
-                  />
-                </ChartContainer>
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart
+                    data={heartData}
+                    margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="date" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                    <Line
+                      type="monotone"
+                      dataKey="value"
+                      stroke="#0EA5E9"
+                      strokeWidth={2}
+                      dot={{ r: 4 }}
+                      name="Heart Rate"
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
                 <div className="bg-medical-secondary rounded-lg p-4">
@@ -201,15 +232,26 @@ const HealthTrackerPage: React.FC = () => {
             <div className="space-y-4">
               <h3 className="text-lg font-medium text-gray-900">Weight (kg)</h3>
               <div className="h-64">
-                <ChartContainer data={weightData} className="h-full">
-                  <Line
-                    type="monotone"
-                    dataKey="value"
-                    stroke="#0EA5E9"
-                    strokeWidth={2}
-                    dot={{ r: 4 }}
-                  />
-                </ChartContainer>
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart
+                    data={weightData}
+                    margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="date" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                    <Line
+                      type="monotone"
+                      dataKey="value"
+                      stroke="#0EA5E9"
+                      strokeWidth={2}
+                      dot={{ r: 4 }}
+                      name="Weight"
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
                 <div className="bg-medical-secondary rounded-lg p-4">
